@@ -38,7 +38,7 @@ make CONFIG=t85_pi2co PROGRAMMER="-c ft232h" fuse
 
 After that you should be able to speak to the chip with the `micronucleus` commandline application if you connect a USB breakout appropriately. **To enter the bootloader later**, you'll need to reset the chip by briefly shorting the RESET pin to ground.
 
-To allow normal users to spead with the bootloader, apply the
+To allow normal users to speak with the bootloader, apply the
 udev rules found in [49-micronucleus.rules](https://github.com/micronucleus/micronucleus/blob/e74ce6f064e0bcbe1c52459a0988187c76834222/commandline/49-micronucleus.rules).
 
 ### Flash the Firmware
