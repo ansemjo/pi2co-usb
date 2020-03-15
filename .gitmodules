@@ -1,0 +1,3 @@
+[submodule "bootloader/micronucleus"]
+	path = bootloader/micronucleus
+	url = https://github.com/micronucleus/micronucleus/
