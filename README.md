@@ -25,7 +25,7 @@ It is meant to work together with a current [micronucleus](https://github.com/mi
 
 ### Flash the Bootloader
 
-At first I used a default release for the ATtiny85 that I flashed with an ISP programmer and later changed a few options to enable the indicator LED, enter the bootloader only after sorting the RESET pin and disable the timeout. The configuration can be found in `bootloader/t85_pi2co` and can be linked or copied to a micronucleus project under `firmware/configuration/`.
+At first I used a default release for the ATtiny85 that I flashed with an ISP programmer and later changed a few options to enable the indicator LED, enter the bootloader only after shorting the RESET pin and disable the timeout. The configuration can be found in `bootloader/t85_pi2co` and can be linked or copied to a micronucleus project under `firmware/configuration/`.
 
 For example, to compile the firmware with the config profile above and flash it with an [Adafruit FT232H breakout](https://wiki.semjonov.de/tips/arduino.html#adafruit-ftdi-ft232h-breakout-board):
 
