@@ -12,7 +12,9 @@ On more recent Digispark devices, which use an ATtiny85, a modified version of t
 
 I had a couple of Atmel AVR ATtiny85V-10PU chips and a small leftover piece of protoboard. Enough to build myself an I2C bridge! I used a JST-PH connector on the I2C side, which has a slightly too narrow pitch but it works out with a 4-pin connector if you solder it at the edge of the board. Also I had lots of connectors, so I could crimp myself some cables.
 
-The schematics are currently a TODO. Have some photos for now:
+Here is a simple [schematic](schematic.pdf) of the protoboard version that you see below on the photos:
+
+![](schematic.svg)
 
 ![](photos/proto_top.jpg)
 ![](photos/proto_bottom.jpg)

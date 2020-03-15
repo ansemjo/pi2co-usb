@@ -1,0 +1,415 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "pi2co-usb"
+Date "2020-03-15"
+Rev "1.0"
+Comp "ansemjo"
+Comment1 "https://github.com/ansemjo/pi2co-usb"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85V-10PU U1
+U 1 1 5E6E9F28
+P 5400 4250
+F 0 "U1" H 4870 4296 50  0000 R CNN
+F 1 "ATtiny85V-10PU" H 4870 4205 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 5400 4250 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 5400 4250 50  0001 C CNN
+	1    5400 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR03
+U 1 1 5E6EAA71
+P 5400 3300
+F 0 "#PWR03" H 5400 3150 50  0001 C CNN
+F 1 "+5V" H 5415 3473 50  0000 C CNN
+F 2 "" H 5400 3300 50  0001 C CNN
+F 3 "" H 5400 3300 50  0001 C CNN
+	1    5400 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5E6EB029
+P 5400 5100
+F 0 "#PWR04" H 5400 4850 50  0001 C CNN
+F 1 "GND" H 5405 4927 50  0000 C CNN
+F 2 "" H 5400 5100 50  0001 C CNN
+F 3 "" H 5400 5100 50  0001 C CNN
+	1    5400 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 3650 5400 3500
+$Comp
+L Device:C C2
+U 1 1 5E6EC996
+P 3950 4000
+F 0 "C2" H 4065 4046 50  0000 L CNN
+F 1 "0.1µF" H 4065 3955 50  0000 L CNN
+F 2 "" H 3988 3850 50  0001 C CNN
+F 3 "~" H 3950 4000 50  0001 C CNN
+	1    3950 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5E6ECC30
+P 3500 4000
+F 0 "C1" H 3615 4046 50  0000 L CNN
+F 1 "4.7µF" H 3615 3955 50  0000 L CNN
+F 2 "" H 3538 3850 50  0001 C CNN
+F 3 "~" H 3500 4000 50  0001 C CNN
+	1    3500 4000
+	1    0    0    -1  
+$EndComp
+Connection ~ 5400 3500
+Wire Wire Line
+	5400 3500 5400 3300
+Wire Wire Line
+	3950 3850 3950 3750
+Wire Wire Line
+	3950 3500 5400 3500
+Wire Wire Line
+	5400 4850 5400 4950
+Connection ~ 5400 4950
+Wire Wire Line
+	5400 4950 5400 5100
+Wire Wire Line
+	3950 4150 3950 4250
+Wire Wire Line
+	3950 4950 5400 4950
+$Comp
+L Connector:USB_B_Micro J1
+U 1 1 5E6EF8CB
+P 1750 1700
+F 0 "J1" H 1807 2167 50  0000 C CNN
+F 1 "USB-B Micro" H 1807 2076 50  0000 C CNN
+F 2 "" H 1900 1650 50  0001 C CNN
+F 3 "~" H 1900 1650 50  0001 C CNN
+	1    1750 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5E6F2307
+P 1750 2300
+F 0 "#PWR01" H 1750 2050 50  0001 C CNN
+F 1 "GND" H 1755 2127 50  0000 C CNN
+F 2 "" H 1750 2300 50  0001 C CNN
+F 3 "" H 1750 2300 50  0001 C CNN
+	1    1750 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1650 2100 1650 2200
+Wire Wire Line
+	1650 2200 1750 2200
+Wire Wire Line
+	1750 2200 1750 2300
+Wire Wire Line
+	1750 2100 1750 2200
+Connection ~ 1750 2200
+$Comp
+L power:+5V #PWR02
+U 1 1 5E6F2A5D
+P 2200 1300
+F 0 "#PWR02" H 2200 1150 50  0001 C CNN
+F 1 "+5V" H 2215 1473 50  0000 C CNN
+F 2 "" H 2200 1300 50  0001 C CNN
+F 3 "" H 2200 1300 50  0001 C CNN
+	1    2200 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 1300 2200 1500
+Wire Wire Line
+	2200 1500 2050 1500
+Text GLabel 2400 1700 2    50   Input ~ 0
+D_PLUS
+Text GLabel 2400 1800 2    50   Input ~ 0
+D_MINUS
+Text GLabel 6150 4650 3    50   Input ~ 0
+RESET
+Wire Wire Line
+	6000 4450 6150 4450
+Wire Wire Line
+	6150 4450 6150 4650
+Wire Wire Line
+	2050 1700 2400 1700
+Wire Wire Line
+	2050 1800 2400 1800
+$Comp
+L Device:R R2
+U 1 1 5E6FC481
+P 7100 4450
+F 0 "R2" V 6893 4450 50  0000 C CNN
+F 1 "100Ω" V 6984 4450 50  0000 C CNN
+F 2 "" V 7030 4450 50  0001 C CNN
+F 3 "~" H 7100 4450 50  0001 C CNN
+	1    7100 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5E6FCB09
+P 7100 4600
+F 0 "R3" V 7300 4600 50  0000 C CNN
+F 1 "100Ω" V 7200 4600 50  0000 C CNN
+F 2 "" V 7030 4600 50  0001 C CNN
+F 3 "~" H 7100 4600 50  0001 C CNN
+	1    7100 4600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6000 4250 6750 4250
+Wire Wire Line
+	6750 4250 6750 4450
+Wire Wire Line
+	6750 4450 6950 4450
+Wire Wire Line
+	6000 4350 6650 4350
+Wire Wire Line
+	6650 4350 6650 4600
+Wire Wire Line
+	6650 4600 6950 4600
+$Comp
+L Device:D_Zener D2
+U 1 1 5E7009F4
+P 7400 4750
+F 0 "D2" V 7354 4829 50  0000 L CNN
+F 1 "3.3V" V 7445 4829 50  0000 L CNN
+F 2 "" H 7400 4750 50  0001 C CNN
+F 3 "~" H 7400 4750 50  0001 C CNN
+	1    7400 4750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D_Zener D3
+U 1 1 5E700F73
+P 8050 4600
+F 0 "D3" V 8004 4679 50  0000 L CNN
+F 1 "3.3V" V 8095 4679 50  0000 L CNN
+F 2 "" H 8050 4600 50  0001 C CNN
+F 3 "~" H 8050 4600 50  0001 C CNN
+	1    8050 4600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7250 4600 7400 4600
+Text GLabel 7550 4600 2    50   Input ~ 0
+D_PLUS
+Wire Wire Line
+	7400 4600 7550 4600
+Connection ~ 7400 4600
+Wire Wire Line
+	7250 4450 8050 4450
+Text GLabel 8200 4450 2    50   Input ~ 0
+D_MINUS
+Wire Wire Line
+	8200 4450 8050 4450
+Connection ~ 8050 4450
+$Comp
+L Device:R R4
+U 1 1 5E706F73
+P 8050 4250
+F 0 "R4" H 8120 4296 50  0000 L CNN
+F 1 "2.2kΩ" H 8120 4205 50  0000 L CNN
+F 2 "" V 7980 4250 50  0001 C CNN
+F 3 "~" H 8050 4250 50  0001 C CNN
+	1    8050 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 4400 8050 4450
+$Comp
+L power:+5V #PWR07
+U 1 1 5E70784D
+P 8050 4100
+F 0 "#PWR07" H 8050 3950 50  0001 C CNN
+F 1 "+5V" H 8065 4273 50  0000 C CNN
+F 2 "" H 8050 4100 50  0001 C CNN
+F 3 "" H 8050 4100 50  0001 C CNN
+	1    8050 4100
+	1    0    0    -1  
+$EndComp
+Text Label 2150 2000 0    50   Italic 0
+floating
+Wire Wire Line
+	2050 1900 2050 2000
+Wire Wire Line
+	2050 2000 2150 2000
+Wire Wire Line
+	7400 4900 7400 5000
+Wire Wire Line
+	7400 5000 7750 5000
+Wire Wire Line
+	8050 5000 8050 4750
+$Comp
+L power:GND #PWR06
+U 1 1 5E710018
+P 7750 5100
+F 0 "#PWR06" H 7750 4850 50  0001 C CNN
+F 1 "GND" H 7755 4927 50  0000 C CNN
+F 2 "" H 7750 5100 50  0001 C CNN
+F 3 "" H 7750 5100 50  0001 C CNN
+	1    7750 5100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 5100 7750 5000
+Connection ~ 7750 5000
+Wire Wire Line
+	7750 5000 8050 5000
+Wire Wire Line
+	3500 4150 3500 4250
+Wire Wire Line
+	3500 4250 3950 4250
+Connection ~ 3950 4250
+Wire Wire Line
+	3950 4250 3950 4950
+Wire Wire Line
+	3500 3850 3500 3750
+Wire Wire Line
+	3500 3750 3950 3750
+Connection ~ 3950 3750
+Wire Wire Line
+	3950 3750 3950 3500
+$Comp
+L Device:LED D1
+U 1 1 5E7127B4
+P 6400 3150
+F 0 "D1" H 6393 2895 50  0000 C CNN
+F 1 "LED" H 6393 2986 50  0000 C CNN
+F 2 "" H 6400 3150 50  0001 C CNN
+F 3 "~" H 6400 3150 50  0001 C CNN
+	1    6400 3150
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E71316E
+P 6800 3150
+F 0 "R1" V 6593 3150 50  0000 C CNN
+F 1 "220Ω" V 6684 3150 50  0000 C CNN
+F 2 "" V 6730 3150 50  0001 C CNN
+F 3 "~" H 6800 3150 50  0001 C CNN
+	1    6800 3150
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5E7135A3
+P 7050 3250
+F 0 "#PWR05" H 7050 3000 50  0001 C CNN
+F 1 "GND" H 7055 3077 50  0000 C CNN
+F 2 "" H 7050 3250 50  0001 C CNN
+F 3 "" H 7050 3250 50  0001 C CNN
+	1    7050 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3150 7050 3150
+Wire Wire Line
+	7050 3150 7050 3250
+Wire Wire Line
+	6650 3150 6550 3150
+Wire Wire Line
+	6250 3150 6150 3150
+Wire Wire Line
+	6150 3950 6000 3950
+Wire Wire Line
+	6150 3150 6150 3950
+Text GLabel 6650 3750 2    50   Input ~ 0
+I2C_SDA
+Text GLabel 6700 3850 2    50   Input ~ 0
+I2C_SCL
+Wire Wire Line
+	6000 4050 6400 4050
+Wire Wire Line
+	6400 4050 6400 3750
+Wire Wire Line
+	6400 3750 6650 3750
+Wire Wire Line
+	6000 4150 6500 4150
+Wire Wire Line
+	6500 4150 6500 3850
+$Comp
+L Connector_Generic:Conn_01x04 J2
+U 1 1 5E71DAD1
+P 9850 1800
+F 0 "J2" H 9930 1792 50  0000 L CNN
+F 1 "JST-PH" H 9930 1701 50  0000 L CNN
+F 2 "" H 9850 1800 50  0001 C CNN
+F 3 "~" H 9850 1800 50  0001 C CNN
+	1    9850 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5E71E79C
+P 8950 2050
+F 0 "#PWR09" H 8950 1800 50  0001 C CNN
+F 1 "GND" H 8955 1877 50  0000 C CNN
+F 2 "" H 8950 2050 50  0001 C CNN
+F 3 "" H 8950 2050 50  0001 C CNN
+	1    8950 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR08
+U 1 1 5E71EBC2
+P 8950 1850
+F 0 "#PWR08" H 8950 1700 50  0001 C CNN
+F 1 "+5V" H 8965 2023 50  0000 C CNN
+F 2 "" H 8950 1850 50  0001 C CNN
+F 3 "" H 8950 1850 50  0001 C CNN
+	1    8950 1850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 2050 8950 2000
+Wire Wire Line
+	8950 2000 9650 2000
+Wire Wire Line
+	9650 1900 8950 1900
+Wire Wire Line
+	8950 1900 8950 1850
+Text GLabel 9500 1800 0    50   Input ~ 0
+I2C_SDA
+Text GLabel 9450 1700 0    50   Input ~ 0
+I2C_SCL
+Wire Wire Line
+	6500 3850 6700 3850
+Wire Wire Line
+	9450 1700 9650 1700
+Wire Wire Line
+	9500 1800 9650 1800
+Wire Notes Line
+	8650 1250 8650 2500
+Wire Notes Line
+	8650 2500 10700 2500
+Wire Notes Line
+	10700 2500 10700 1250
+Wire Notes Line
+	10700 1250 8650 1250
+Wire Notes Line
+	650  800  650  2700
+Wire Notes Line
+	650  2700 3150 2700
+Wire Notes Line
+	3150 2700 3150 800 
+Wire Notes Line
+	3150 800  650  800 
+Text Notes 10550 2400 2    50   ~ 0
+Connector to I2C Bus
+Text Notes 3050 2600 2    50   ~ 0
+USB Connector Breakout
+$EndSCHEMATC
