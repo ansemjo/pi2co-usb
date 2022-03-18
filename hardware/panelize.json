@@ -1,0 +1,45 @@
+{
+    "layout": {
+        "hspace": "7mm",
+        "vspace": "2mm",
+        "rows": "5",
+        "cols": "2",
+        "vbackbone": "3mm"
+    },
+    "source": {
+        "tolerance": "10mm"
+    },
+    "tabs": {
+        "type": "fixed",
+        "width": "3mm",
+        "vcount": "0",
+    },
+    "cuts": {
+        "type": "mousebites",
+        "offset": "-0.3mm"
+    },
+    "framing": {
+        "type": "frame",
+        "width": "5mm",
+        "fillet": "2mm"
+    },
+    "fiducials": {
+        "type": "3fid",
+        "hoffset": "2.5mm",
+        "voffset": "2.5mm",
+        "coppersize": "2mm"
+    },
+    "text": {
+        "type": "simple",
+        "anchor": "mb",
+        "voffset": "-2.5mm",
+        "width": "1mm",
+        "height": "1mm",
+        "thickness": "0.15mm",
+        "text": "JLCJLCJLCJLC"
+    },
+    "post": {
+        "copperfill": "True",
+        "millradius": "1mm"
+    }
+}
