@@ -2,22 +2,22 @@
 
 This project is based on [i2c-tiny-usb](https://github.com/harbaum/I2C-Tiny-USB/) by Till Harbaum and the [V-USB stack](https://www.obdev.at/products/vusb/index.html) by Objective Development. It uses the fact that you can implement a low-speed USB device with the IO pins on an Atmel AVR chip to create a very simple I2C bridge.
 
-![](photos/header.jpg)
+![](../photos/proto_header.jpg)
 
 ## Hardware
 
-In the original `i2c-tiny-usb` implementation, an Atmel AVR ATtiny45 was used with an external oscillator. Unfortunately this also meant that you needed to use all six pins on the chip – including the RESET pin. Should anything ever go wrong you would need a high-voltage serial programmer (HVSP).
+In the original `i2c-tiny-usb` implementation, an Atmel AVR ATtiny45 was used with an external oscillator. Unfortunately this meant, that you needed to use all six pins on the chip, reconfigure the RESET pin and therefore needed a high-voltage serial programmer (HVSP) should anything go wrong.
 
-On more recent Digispark devices, which use an ATtiny85, a modified version of the V-USB stack is used. They use only the internal PLL oscillator calibrated to 16.5 MHz. No external crystal is required, ISP remains available and you can even connect an indicator LED on the remaining pin!
+On more recent Digispark devices, which use an ATtiny85, a modified version of the V-USB stack is used with only the internal PLL oscillator calibrated to 16.5 MHz. No external chrystal is required, ISP remains available and you can even connect an indicator LED on the remaining pin.
 
-In 2020 I soldered [a protype with a DIP ATtiny85](prototype/README.md) and a small leftover piece of protoboard – enough to build myself an I2C bridge! This year I updated the design and created a custom PCB in KiCad. It brings an additional voltage regulator for 3.3V, a selection slider between the two available voltages, a [bidirectional level shifter based on two N-channel MOSFETs](https://cdn-shop.adafruit.com/datasheets/AN10441.pdf) and a standard JST-SH connector; the latter is used by a number of different maker vendors under the names [Qwiic (SparkFun)](https://www.sparkfun.com/qwiic) or [STEMMA QT (Adafruit)](https://learn.adafruit.com/introducing-adafruit-stemma-qt/what-is-stemma-qt). *Note: for interoperability with Qwiic devices **always use 3.3V**!*
+I had a couple of Atmel AVR ATtiny85V-10PU chips and a small leftover piece of protoboard. Enough to build myself an I2C bridge! I used a JST-PH connector on the I2C side, which has a slightly too narrow pitch but it works out with a 4-pin connector if you solder it at the edge of the board. Also I had lots of connectors, so I could crimp myself some cables.
 
-The [schematic](hardware/schematic.pdf) and the KiCad project can be found in [`hardware/`](hardware/).
+Here is a simple [schematic](schematic.pdf) of the protoboard version that you see below on the photos:
 
-![](photos/side-by-side-top.jpg)
-![](photos/side-by-side-bottom.jpg)
+![](schematic.svg)
 
-Since the ATtiny85 is basically the same, you can use the exact same bootloader and firmware as I used for the prototype; the rest of this README thus still applies.
+![](../photos/proto_top.jpg)
+![](../photos/proto_bottom.jpg)
 
 ## Software
 
